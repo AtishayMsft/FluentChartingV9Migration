@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/babel-preset-global-context": "^9.0.0-beta.30",
+    "@fluentui/react-charting": "^5.16.43",
+    "@fluentui/react-components": "^9.21.0",
+    "@fluentui/react-migration-v8-v9": "^9.2.16",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
