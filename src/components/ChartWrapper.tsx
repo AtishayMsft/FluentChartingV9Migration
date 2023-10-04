@@ -7,13 +7,16 @@ import { ThemeContext_unstable as V9ThemeContext } from "@fluentui/react-shared-
 import React from 'react';
 import { Theme,webDarkTheme,webLightTheme } from '@fluentui/react-components';
 import { LineChartBasicExample } from './LineChartBasicExample';
+import * as d3Color from 'd3-color';
 
 
-export function WrapperComp() {
+export function ChartWrapper() {
     
     let parentV9Theme  = React.useContext(V9ThemeContext) as Theme;
     let v9Theme:Theme=parentV9Theme?parentV9Theme:webLightTheme;
-    const myV8Theme=createV8Theme(myVariant,v9Theme,!(v9Theme.colorNeutralBackground1===white));
+    let backgroundColor = d3Color.hsl(v9Theme.colorNeutralBackground1);
+    let foregroundColor = d3Color.hsl(v9Theme.colorNeutralForeground1);
+    const myV8Theme=createV8Theme(myVariant,v9Theme, backgroundColor.l > foregroundColor.l);
     return (
     <ThemeProvider theme={myV8Theme}>
     <VerticalBarChartBasicExample/>

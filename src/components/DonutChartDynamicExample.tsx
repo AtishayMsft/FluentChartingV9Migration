@@ -69,6 +69,7 @@ export class DonutChartDynamicExample extends React.Component<IDonutChartProps, 
           }}
           hideLabels={this.state.hideLabels}
           showLabelsInPercent={this.state.showLabelsInPercent}
+          valueInsideDonut={"100"}
         />
         <DefaultButton text="Change data" onClick={this._changeData} />
         <DefaultButton text="Change colors" onClick={this._changeColors} />
@@ -106,17 +107,17 @@ export class DonutChartDynamicExample extends React.Component<IDonutChartProps, 
     return this._colors[index][Math.floor(Math.random() * this._colors[index].length)];
   }
 
-  private _onHideLabelsCheckChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
+  private _onHideLabelsCheckChange = (ev?: React.MouseEvent<HTMLElement> | React.FormEvent<HTMLElement | HTMLInputElement> | undefined, checked?: boolean | undefined) => {
     let innerRadius: number;
     if (checked) {
       innerRadius = 55;
     } else {
       innerRadius = 35;
     }
-    this.setState({ hideLabels: checked, innerRadius });
+    this.setState({ hideLabels: checked!, innerRadius });
   };
 
-  private _onShowPercentCheckChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
-    this.setState({ showLabelsInPercent: checked });
+  private _onShowPercentCheckChange = (ev?: React.MouseEvent<HTMLElement> | React.FormEvent<HTMLElement | HTMLInputElement> | undefined, checked?: boolean | undefined) => {
+    this.setState({ showLabelsInPercent: checked! });
   };
 }

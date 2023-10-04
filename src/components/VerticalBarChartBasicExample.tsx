@@ -50,18 +50,18 @@ export class VerticalBarChartBasicExample extends React.Component<IVerticalBarCh
     this.setState({ height: parseInt(e.target.value, 10) });
   };
 
-  private _onChange = (ev: React.FormEvent<HTMLInputElement>, option: IChoiceGroupOption): void => {
+  private _onChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement> | undefined, option?: IChoiceGroupOption | undefined): void => {
     if (this.state.isCalloutselected) {
       this.setState({ isCalloutselected: false });
     } else {
       this.setState({ isCalloutselected: true });
     }
   };
-  private _onCheckChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
-    this.setState({ useSingleColor: checked });
+  private _onCheckChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement> | undefined, checked?: boolean | undefined) => {
+    this.setState({ useSingleColor: checked! });
   };
-  private _onHideLabelsCheckChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
-    this.setState({ hideLabels: checked });
+  private _onHideLabelsCheckChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement> | undefined, checked?: boolean | undefined) => {
+    this.setState({ hideLabels: checked! });
   };
 
   private _basicExample(): JSX.Element {
@@ -208,12 +208,6 @@ export class VerticalBarChartBasicExample extends React.Component<IVerticalBarCh
             lineLegendText={'just line'}
             lineLegendColor={'brown'}
             lineOptions={lineOptions}
-            {...(this.state.isCalloutselected && {
-              onRenderCalloutPerDataPoint: (
-                props: IVerticalBarChartDataPoint,
-                defaultRender: IRenderFunction<IVerticalBarChartDataPoint>,
-              ) => (props ? defaultRender(props) : null),
-            })}
             hideLabels={this.state.hideLabels}
           />
         </div>

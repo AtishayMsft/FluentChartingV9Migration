@@ -29,8 +29,8 @@ export class LineChartBasicExample extends React.Component<{}, ILineChartBasicSt
   private _onHeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ height: parseInt(e.target.value, 10) });
   };
-  private _onShapeChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
-    this.setState({ allowMultipleShapes: checked });
+  private _onShapeChange = (ev: React.MouseEvent<HTMLElement, MouseEvent>, checked?: boolean | undefined) => {
+    this.setState({ allowMultipleShapes: checked! });
   };
 
   private _basicExample(): JSX.Element {
