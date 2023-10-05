@@ -11,10 +11,8 @@ More testing and validation to happen in the current quarter.
 
 ## Known issues
 There are some known styling issues that we have discovered using this POC.
-1. P1 - The bar labels are grey in dark mode and white color in light mode. As a workaround, set hideLabels prop = true until the issue is fixed.
-2. P2 - The gap between 2 segments in donut chart is in white color for dark mode. Whereas it should be in background color in dark mode.
-3. P2 - The border color of lines is white in dark mode and dark in light mode. Whereas it should be background color in both modes.
-4. P2 - The background shade of black for charts is not same as background shade in dark mode in some places. Both the shades should match to provide seamless experience.
+1. P2 - The gap between 2 segments in donut chart is in white color for dark mode. Whereas it should be in background color in dark mode.
+2. P2 - The background shade of black for charts is slightly different than background shade in dark mode in some places. The shades should align to their expected values.
 
 ## Running this demo
 
